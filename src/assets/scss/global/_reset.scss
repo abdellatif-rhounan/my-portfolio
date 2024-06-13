@@ -1,0 +1,46 @@
+// Import Helpers
+@use "@/assets/scss/helpers/variables" as *;
+
+// Import Font 'Poppins' & 'Kalam'
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap");
+
+// Import Box Icons
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
+// Reset Styling
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 300px;
+  background-color: $bg_color;
+  font-family: $main_font, sans-serif !important;
+  color: $text_color;
+  overflow-x: hidden;
+}
+
+// Text Selection Override
+::selection {
+  background-color: rgba($brand_color, 0.69);
+  color: #000;
+}
+
+// Sweet Alert
+.swal2-popup {
+  font-size: 15px !important;
+}
+
+// Scroll Bar Override
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #9c9393;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $brand_color;
+  border-radius: 6px;
+}

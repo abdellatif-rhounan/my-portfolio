@@ -1,0 +1,86 @@
+// Import Helpers
+@use "@/assets/scss/helpers/variables" as *;
+@use "@/assets/scss/helpers/mixins" as *;
+
+// Global css classes
+.portfolio-section {
+  min-height: 100vh;
+  padding: {
+    top: calc(52.6px + 1.5rem);
+    bottom: 1.5rem;
+  }
+}
+
+.btn-c {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 7px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 2px solid $brand_color;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  > i {
+    position: relative;
+    top: 2px;
+    font-size: 20px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.btn-brand {
+  @include btn-class($brand_color, $bg_color);
+}
+
+.btn-outline-brand {
+  @include btn-class($bg_color, $brand_color);
+}
+
+.heading {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 30px;
+  > span {
+    color: $brand_color;
+  }
+}
+
+// Small Screen
+@media (min-width: 576px) {
+  .btn-c {
+    padding: 6px 12px;
+  }
+
+  .heading {
+    font-size: 33px;
+  }
+}
+
+// xLarge Screen
+@media (min-width: 1200px) {
+  .btn-c {
+    padding: 6px 13px;
+    font-size: 16px;
+  }
+}
